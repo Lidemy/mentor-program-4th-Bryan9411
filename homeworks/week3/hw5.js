@@ -3,7 +3,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
-/* eslint-disable prefer-const */
 /* eslint-disable consistent-return */
 const readline = require('readline');
 
@@ -45,12 +44,12 @@ compareSmall = (a, b, maxa, maxb) => {
 
 // 判斷 k = 1 or -1
 determine = (str) => {
-  let arr = str.split(' ');
-  let a = arr[0].length;
-  let b = arr[1].length;
-  let c = arr[0];
-  let d = arr[1];
-  let k = Number(arr[2]);
+  const arr = str.split(' ');
+  const a = arr[0].length;
+  const b = arr[1].length;
+  const c = arr[0];
+  const d = arr[1];
+  const k = Number(arr[2]);
   if (k === 1) return compareBig(a, b, c, d);
   if (k === -1) return compareSmall(a, b, c, d);
 };

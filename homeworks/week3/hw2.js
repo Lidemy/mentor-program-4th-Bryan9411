@@ -1,6 +1,5 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-else-return */
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-const-assign */
@@ -56,7 +55,6 @@ isNarcissistic = (n) => {
   }
   if (sum === n) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 };

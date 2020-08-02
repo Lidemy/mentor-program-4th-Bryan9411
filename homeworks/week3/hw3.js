@@ -34,7 +34,8 @@ function solve(input) {
     }
     if (isPrime) {
       console.log('Prime');
+    } else {
+      console.log('Composite');
     }
-    console.log('Composite');
   }
 }

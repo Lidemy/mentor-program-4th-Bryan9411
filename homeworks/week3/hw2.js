@@ -20,8 +20,7 @@ rl.on('close', () => {
 });
 
 function solve(input) {
-  const line = input[0];
-  const temp = line.split(' ');
+  const temp = input[0].split(' ');
   const n = Number(temp[0]);
   const m = Number(temp[1]);
   for (let i = n; i <= m; i += 1) {
@@ -37,7 +36,6 @@ numCount = (n) => {
     return 1;
   }
   while (n !== 0) {
-    const m = n;
     m = Math.floor(n / 10);
     result++;
   }

@@ -3,7 +3,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
-/* eslint-disable prefer-const */
 const readline = require('readline');
 
 const lines = [];
@@ -21,9 +20,9 @@ rl.on('close', () => {
 });
 
 function solve(input) {
-  let temp = input[0].split(' ');
-  let n = Number(temp[0]);
-  let m = Number(temp[1]);
+  const temp = input[0].split(' ');
+  const n = Number(temp[0]);
+  const m = Number(temp[1]);
   for (let i = n; i <= m; i += 1) {
     if (isNarcissistic(i)) {
       console.log(i);
@@ -45,10 +44,10 @@ numCount = (n) => {
 
 isNarcissistic = (n) => {
   let m = n;
-  let total = numCount(n);
+  const total = numCount(n);
   let sum = 0;
   while (m !== 0) {
-    let num = m % 10;
+    const num = m % 10;
     sum += num ** total;
     m = Math.floor(m / 10);
   }

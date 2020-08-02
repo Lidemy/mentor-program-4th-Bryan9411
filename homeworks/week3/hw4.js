@@ -3,7 +3,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
-/* eslint-disable prefer-const */
 const readline = require('readline');
 
 const lines = [];
@@ -21,7 +20,7 @@ rl.on('close', () => {
 });
 
 function solve(input) {
-  let line = input[0];
+  const line = input[0];
   if (line === reverStr(line)) {
     console.log('True');
   } else {

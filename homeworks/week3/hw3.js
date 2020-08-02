@@ -3,7 +3,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
-/* eslint-disable prefer-const */
 const readline = require('readline');
 
 const lines = [];

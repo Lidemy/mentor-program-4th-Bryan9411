@@ -1,7 +1,5 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
-
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-useless-return */
 /* eslint-disable consistent-return */

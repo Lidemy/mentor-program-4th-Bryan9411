@@ -162,9 +162,9 @@ header{
                 margin-right: 23px;
                 transform: scale(1);
                 transition: all 1s;
+                overflow: hidden;
                 &:hover{
                     transform: scale(1.1);
-                    overflow: hidden;
                 }
                 @include pad {
                     margin-bottom: 23px;
@@ -191,9 +191,9 @@ header{
                 background-color: #f9f9b5;
                 transform: scale(1);
                 transition: all 1s;
+                overflow: hidden;
                 &:hover{
                     transform: scale(1.1);
-                    overflow: hidden;
                 }
                 a{
                     position: absolute;
@@ -243,13 +243,10 @@ header{
         flex-wrap: wrap;
         justify-content: space-around;
         padding-top: 36px;
-        // padding-bottom: 30px;
-        @include pad{
-            // flex-direction: column;
-        }
         a{
             display: block;
             width: 25%;
+            overflow: hidden;
             @include pad {
                 width: 50%;
                 padding: 1%;
@@ -260,7 +257,7 @@ header{
                 transition: all 1s;
                 &:hover{
                     transform: scale(1.1);
-                    overflow: hidden;
+                    
                 }
             }
         }

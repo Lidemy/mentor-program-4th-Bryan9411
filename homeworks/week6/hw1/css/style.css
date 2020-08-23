@@ -276,12 +276,12 @@ header nav .container .top__Menu li a {
           transform: scale(1);
   -webkit-transition: all 1s;
   transition: all 1s;
+  overflow: hidden;
 }
 
 .main .container .service .order:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -315,12 +315,12 @@ header nav .container .top__Menu li a {
           transform: scale(1);
   -webkit-transition: all 1s;
   transition: all 1s;
+  overflow: hidden;
 }
 
 .main .container .service .search__order:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  overflow: hidden;
 }
 
 .main .container .service .search__order a {
@@ -389,6 +389,7 @@ header nav .container .top__Menu li a {
 .menu__Look .pic a {
   display: block;
   width: 25%;
+  overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -409,7 +410,6 @@ header nav .container .top__Menu li a {
 .menu__Look .pic a img:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  overflow: hidden;
 }
 
 .comment {

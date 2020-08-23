@@ -6,7 +6,9 @@
 `<code>`：在網頁上顯示一段程式碼
 
 ## 請問什麼是盒模型（box modal）
-盒模型就像一個盒子概念一樣，擁有周圍的 html 元素，像是邊框、間距..等。盒模型可以讓我們在其他元素和周圍 html 元素之間放置元素。
+盒模型就像一個盒子概念一樣，除了本身的寬高外，還包含`padding`、`margin `以及邊框`border `，這些元素都會影響整個寬高。
+
+![avatar](https://upload.cc/i1/2020/08/23/bEc8Pl.png)
 
 ## 請問 display: inline, block 跟 inline-block 的差別是什麼？
 `<display:block>`：左右稱滿，可自行設定寬高。 例如: `<div>`、`<p>`、`<h1>`、`<ul>`

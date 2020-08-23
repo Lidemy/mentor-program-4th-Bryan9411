@@ -1,0 +1,269 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+section {
+  padding-top: 129px;
+  padding-bottom: 126px;
+}
+
+@media (max-width: 414px) {
+  section {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+section .container {
+  max-width: 645px;
+  margin: auto;
+  -webkit-box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+section .container .topBar {
+  height: 8px;
+  border: solid 6px #fad312;
+  background-color: #fad312;
+}
+
+section .container form {
+  padding-top: 54px;
+  padding-left: 42px;
+}
+
+@media (max-width: 320px) {
+  section .container form {
+    padding-left: 20px;
+  }
+}
+
+section .container form h1 {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Microsoft JhengHei;
+}
+
+section .container form .location {
+  padding-top: 35px;
+}
+
+section .container form .location p {
+  font-size: 14px;
+}
+
+section .container form .location p:first-child {
+  padding-bottom: 13px;
+}
+
+section .container form .location .necessary {
+  padding-top: 22px;
+}
+
+section .container form .location .necessary span {
+  color: #e74149;
+  font-size: 16px;
+}
+
+section .container form .nickname {
+  padding-top: 55px;
+}
+
+section .container form .nickname h2 {
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+section .container form .nickname h2::after {
+  content: '*';
+  color: #e74149;
+}
+
+section .container form .nickname input {
+  width: 287px;
+  height: 23px;
+  border: solid 1px #d0d0d0;
+}
+
+section .container form .mail {
+  padding-top: 55px;
+}
+
+section .container form .mail h2 {
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+section .container form .mail h2::after {
+  content: '*';
+  color: #e74149;
+}
+
+section .container form .mail input {
+  width: 287px;
+  height: 23px;
+  border: solid 1px #d0d0d0;
+}
+
+section .container form .phone {
+  padding-top: 55px;
+}
+
+section .container form .phone h2 {
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+section .container form .phone h2::after {
+  content: '*';
+  color: #e74149;
+}
+
+section .container form .phone input {
+  width: 287px;
+  height: 23px;
+  border: solid 1px #d0d0d0;
+}
+
+section .container form .apply__type {
+  padding-top: 55px;
+}
+
+section .container form .apply__type h2 {
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+section .container form .apply__type h2::after {
+  content: '*';
+  color: #e74149;
+}
+
+section .container form .apply__type input {
+  margin-top: 24px;
+}
+
+section .container form .info__source {
+  padding-top: 55px;
+}
+
+section .container form .info__source h2 {
+  font-size: 20px;
+  padding-bottom: 25px;
+}
+
+section .container form .info__source h2::after {
+  content: '*';
+  color: #e74149;
+}
+
+section .container form .info__source input {
+  width: 287px;
+  height: 23px;
+  border: solid 1px #d0d0d0;
+}
+
+section .container form .other {
+  padding-top: 55px;
+}
+
+section .container form .other h2 {
+  font-size: 20px;
+  padding-bottom: 12px;
+}
+
+section .container form .other span {
+  display: block;
+  font-size: 14px;
+  padding-bottom: 24px;
+}
+
+section .container form .other input {
+  width: 287px;
+  height: 23px;
+  border: solid 1px #d0d0d0;
+}
+
+section .container form .submit {
+  padding-top: 58px;
+}
+
+section .container form .submit input {
+  width: 92px;
+  height: 40px;
+  background-color: #fad312;
+  margin-bottom: 21px;
+}
+
+section .container form .submit span {
+  display: block;
+  padding-bottom: 35px;
+}
+
+footer {
+  position: relative;
+  height: 60px;
+  background-color: #000000;
+}
+
+footer span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #999999;
+  font-size: 13px;
+}
+/*# sourceMappingURL=form.css.map */

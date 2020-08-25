@@ -1,0 +1,494 @@
+// css 載入
+@import "reset";
+@import "grid";
+
+
+// header 
+
+header{
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+    height: 115px;
+    nav{
+       .container{
+           display: flex;
+           max-width: 1730px;
+           margin: auto;
+           justify-content: space-between;
+           align-items: center;
+           @include pad{
+            flex-direction: column;
+           }
+           .logo{
+               
+               a{
+                   display: block;
+                   text-decoration: none;
+                   font-family: 'Questrial';
+                   font-weight: bold;
+                   font-size: 36px;
+                   color: #489846;
+               }
+           }
+           .top__Menu{
+               display: flex;
+               padding: 34px 0;
+               @include pad{
+                   padding: 0;
+                   margin-top: 20px;
+               }
+               li{
+                   margin-right: 60px;
+                   height: 44px;
+                   &:hover{
+                       background-color: #ff7286;
+                       border-radius: 8px;
+                       a{
+                           color: #fefefe;
+                       }
+                   }
+                   @include pad{
+                    margin-right: 0;
+                    height: 50px;
+                   }
+                   a{
+                       padding: 14px 25px 14px 25px;
+                       display: block;
+                       text-decoration: none;
+                       color: #010101;
+                       font-size: 18px;
+                       font-family: "Microsoft JhengHei";
+                       font-weight: bold;
+                       line-height: 22px;
+                   }                
+               }
+           }
+       } 
+    }
+}
+
+// banner
+
+.banner{
+    position: relative;
+    background-image: url('../img/topBanner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 580px;
+    @include pad{
+        height: 350px;
+    }
+    &::after{
+        content:'';
+        position: absolute;
+        background: rgba(0,0,0,0.4);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    h1{
+        position: relative;
+        display: inline-block;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        font-size: 60px;
+        font-weight: bold;
+        z-index: 2;
+    }
+}
+
+// 當輕食之風盛起
+.main{
+    padding-top: 80px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1730px;
+        margin: auto;
+        .about{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            h2{
+                position: relative;
+                // text-align: center;
+                font-size: 36px;
+                font-weight: bold;
+                font-family: 'MicrosoftJhengHei';
+                color: #000000;
+                padding-left: 17px;
+                &::before{
+                    content: '';
+                    width: 15px;
+                    height: 38px;
+                    background-color: #a3dea2;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+            p{
+                text-align: center;
+                padding-top: 21px;
+                font-size: 16px;
+                font-family: 'MicrosoftJhengHei';
+                line-height: 1.8;
+                @include pad{
+                    padding: 20px;
+                }
+            }
+        }
+        .service{
+            display: flex;
+            padding-top: 84px;
+            @include pad{
+                flex-direction: column;
+            }
+            .order{
+                position: relative;
+                width: 300px;
+                height: 160px;
+                border-radius: 8px;
+                background-color: #a8e8e1;
+                margin-right: 23px;
+                transform: scale(1);
+                transition: all 1s;
+                overflow: hidden;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                @include pad {
+                    margin-bottom: 23px;
+                    margin-right: 0;
+                }
+                a{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: block;
+                    text-decoration: none;
+                    font-family: 'MicrosoftJhengHei';
+                    font-size: 36px;
+                    font-weight: bold;
+                    color: #3e613d;
+                }
+            }
+            .search__order{
+                position: relative;
+                width: 300px;
+                height: 160px;
+                border-radius: 8px;
+                background-color: #f9f9b5;
+                transform: scale(1);
+                transition: all 1s;
+                overflow: hidden;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                a{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    display: block;
+                    text-decoration: none;
+                    font-family: 'MicrosoftJhengHei';
+                    font-size: 36px;
+                    font-weight: bold;
+                    color: #3e613d;
+                }
+            }
+        }
+    }
+}
+
+// menu 搶先看
+.menu__Look{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 121px;
+    h2{
+        position: relative;
+        font-size: 36px;
+        font-family: 'MicrosoftJhengHei';
+        font-weight: bold;
+        color: #000000;
+        padding-left: 17px;
+        &::before{
+            content: '';
+            width: 15px;
+            height: 38px;
+            background-color: #a3dea2;
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    .pic{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 36px;
+        a{
+            display: block;
+            width: 25%;
+            overflow: hidden;
+            @include pad {
+                width: 50%;
+                padding: 1%;
+            }
+            img{
+                width: 100%;
+                transform: scale(1);
+                transition: all 1s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+// 吃過都說好
+.comment{
+    padding-top: 82px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1730px;
+        margin: auto;
+        h2{
+            position: relative;
+            font-size: 36px;
+            font-family: 'MicrosoftJhengHei';
+            font-weight: bold;
+            color: #000000;
+            padding-left: 17px;
+            &::before{
+                content: '';
+                width: 15px;
+                height: 38px;
+                background-color: #a3dea2;
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        ul{
+            display: flex;
+            padding-top: 98px;
+            @include pad{
+                flex-direction: column;
+            }
+            li{
+                position: relative;
+                width:100%;
+                max-width: 565px;
+                height: 205px;
+                border-radius: 5px;
+                box-shadow: -1.4px -1.4px 4px 0 #d8eaef;
+                border: solid 1px #c7e5ec;
+                margin-right: 16px;
+                @include pad{
+                    margin-bottom: 75px;
+                }
+                .photo__sticker{
+                    position: absolute;
+                    top: -60px;
+                    left: 206px;
+                    width: 105px;
+                    display: flex;
+                    flex-direction: column;
+                    @include pad{
+                        left: 40%;
+                    }
+                    @include mobile414{
+                        left: 36%;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                    span{
+                        text-align: center;
+                        font-size: 16px;
+                        letter-spacing: 0.14px;
+                        padding-top: 5px;
+                    }
+                }
+                p{
+                    padding-top: 93px;
+                    padding-bottom: 39px;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    letter-spacing: 0.14px;
+                    line-height: 2;
+                    width: 100%;
+                    height: 73px;
+                    font-family: 'MicrosoftJhengHei';
+                    font-size: 16px;
+                    text-align: center;
+                    @include mobile414{
+                        padding-top: 77px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 我們在哪裡
+.google__Map{
+    padding-top: 90px;
+    padding-bottom: 44px;
+    @include pad {
+        padding-top: 0;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        max-width: 1730px;
+        margin: auto;
+        h2{
+            position: relative;
+            font-size: 36px;
+            font-family: 'MicrosoftJhengHei';
+            font-weight: bold;
+            color: #000000;
+            padding-left: 17px;
+            &::before{
+                content: '';
+                width: 15px;
+                height: 38px;
+                background-color: #a3dea2;
+                display: block;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        .map{
+            width: 100%;
+            padding-top: 36px;
+        }
+    }
+}
+
+// footer
+footer{
+    background-color: #e8efee;
+    .container{
+        padding-top: 44px;
+        padding-bottom: 39px;
+        max-width: 1730px;
+        margin: auto;
+        .footer__content{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            @include pad{
+                flex-direction: column;
+            }
+            .info{
+                @include pad{
+                    margin: auto;
+                }
+                p{
+                    font-size: 14px;
+                    color:#484848;
+                    padding-bottom: 16px;
+                    @include mobile414{
+                        // padding: 15px;
+                        line-height: 1.8;
+                    }
+                }
+            }
+            .footer__logo{
+                @include pad{
+                    margin: auto;
+                }
+                @include mobile414{
+                    margin: 0;
+                    padding: 15px;
+                }
+                h1{
+                    font-family: 'Questrial';
+                    font-size: 36px;
+                    color: #489846;
+                    text-align: right;
+                    @include pad{
+                        text-align: left;
+                    }
+                }
+                .fan__Group{
+                    display: flex;
+                    li{
+                        position: relative;
+                        &::after{
+                            content: '/';
+                            position: absolute;
+                            top:0;
+                            right: 0;
+                        }
+                        &:last-child{
+                            &::after{
+                                display: none;
+                            }
+                        }
+                        a{
+                            font-size: 14px;
+                            color:#484848;
+                            text-decoration: none;
+                            padding-right: 10px;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright{
+    position: relative;
+    background-color: #35564b;
+    height: 48px;
+    span{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        font-family: 'MicrosoftJhengHei';
+        font-size: 16px;
+        color: white;
+        white-space: nowrap;
+        @include pad{
+            font-size:14px ;
+        }
+        @include mobile414{
+            white-space:pre-wrap ;
+        }
+    }
+}

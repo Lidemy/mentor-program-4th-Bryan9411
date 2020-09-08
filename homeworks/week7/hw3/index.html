@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>TODO</title>
+</head>
+
+<body>
+    <div class="todo">
+        <div class="container">
+            <header>
+                <h1 class="title">TOdo List</h1>
+                <input type="text" class="todo__input" name = "todo__input" placeholder="Add something to do here :))?">
+            </header>
+            <ul class="todo__list">
+                <!-- <li class="list" data-number="">
+                    <div class="info">
+                        <input type="checkbox" name="check" class="check">
+                        <p class="todo__content">寫程式好棒</p>
+                    </div>
+                    <div class="close">
+                        <a href="javascript:void(0)" class="del">x</a>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+      let list = document.querySelector('.todo__list')
+      let data = JSON.parse(localStorage.getItem('todo__content')) || []
+
+      // 新增待辦
+      document.querySelector('.todo__input').addEventListener('keypress', append)
+
+      // 移除待辦
+      document.querySelector('.todo__list').addEventListener('click', remove)
+
+      // 更新待辦
+      update(data)
+
+      function append(e) {
+        let value = document.querySelector('.todo__input').value
+        let enter = e.keyCode // 找到 enter keycode
+        if (value === '') return
+        value = value.trim() // 去頭尾空白
+        let todo = {
+          content: value
+        }
+        if (enter === 13) {
+            document.querySelector('.todo__input').value = '' // 清除輸入框裡的值
+            data.push(todo)
+            update(data)
+            localStorage.setItem('todo__content', JSON.stringify(data))
+        }
+      }
+      
+      function update(items) {
+        let updateString = ''
+        let itemLen = items.length
+        for (let i=0; i<itemLen; i++) {
+            updateString += `
+                <li class="list">
+                  <div class="info">
+                    <input type="checkbox" name = "check" class="check">
+                      <p class = "todo__content">${escapeHtml(items[i].content)}</p>
+                  </div>
+                  <div class="close">
+                    <a href="javascript:void(0)" class = "del" data-number="${i}">x</a>
+                  </div>
+                </li>
+            `
+        }
+        list.innerHTML = updateString;
+      }
+
+      // 增加刪除線
+      function remove(e) {
+        let check = document.querySelectorAll('input[name=check]')
+        let el = document.querySelectorAll('.info')
+          for (let i = 0; i < check.length; i++) {
+            if (check[i].checked) {
+              el[i].classList.add('through')
+            } else {
+                el[i].classList.remove('through')
+              }
+            }
+        //刪除待辦
+        if (e.target.classList.contains('del')) {
+          let num = e.target.dataset.number
+          data.splice(num,1) //透過編號，刪除一筆
+          localStorage.setItem('todo__content', JSON.stringify(data))
+          update(data)
+        }
+      }
+
+      // 跳脫字元
+      function escapeHtml(unsafe) {
+        return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+      }
+    </script>    
+</body>
+
+</html>

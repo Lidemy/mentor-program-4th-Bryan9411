@@ -1,0 +1,418 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  -webkit-box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+          box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  height: 115px;
+}
+
+header nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1730px;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  header nav .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+header nav .container .logo a {
+  display: block;
+  text-decoration: none;
+  font-family: 'Questrial';
+  font-weight: bold;
+  font-size: 36px;
+  color: #489846;
+}
+
+header nav .container .top__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 34px 0;
+}
+
+@media (max-width: 768px) {
+  header nav .container .top__menu {
+    padding: 0;
+    margin-top: 20px;
+  }
+}
+
+header nav .container .top__menu li {
+  margin-right: 60px;
+  height: 44px;
+}
+
+header nav .container .top__menu li:hover {
+  background-color: #ff7286;
+  border-radius: 8px;
+}
+
+header nav .container .top__menu li:hover a {
+  color: #fefefe;
+}
+
+@media (max-width: 768px) {
+  header nav .container .top__menu li {
+    margin-right: 0;
+    height: 50px;
+  }
+}
+
+header nav .container .top__menu li a {
+  padding: 14px 25px 14px 25px;
+  display: block;
+  text-decoration: none;
+  color: #010101;
+  font-size: 17px;
+  font-family: "Microsoft JhengHei";
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.faq {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.faq .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1730px;
+  margin: auto;
+}
+
+.faq .container .title h2 {
+  position: relative;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'MicrosoftJhengHei';
+  color: #000000;
+  padding-left: 17px;
+}
+
+.faq .container .title h2::before {
+  content: '';
+  width: 15px;
+  height: 38px;
+  background-color: #a3dea2;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.faq .container ul {
+  padding-top: 20px;
+  margin: auto;
+}
+
+.faq .container ul li {
+  position: relative;
+  width: 810px;
+  padding: 31px 10px;
+  -webkit-transition: height .5s ease;
+  transition: height .5s ease;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .faq .container ul li {
+    width: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq .container ul li {
+    width: 400px;
+  }
+}
+
+@media (max-width: 414px) {
+  .faq .container ul li {
+    width: 300px;
+  }
+}
+
+.faq .container ul li:hover {
+  background-color: #f0f0f0f0;
+}
+
+.faq .container ul li::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 2px;
+  width: 810px;
+  height: 1px;
+  background-color: #a6e2c0;
+}
+
+@media (max-width: 768px) {
+  .faq .container ul li::after {
+    width: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq .container ul li::after {
+    width: 335px;
+  }
+}
+
+@media (max-width: 414px) {
+  .faq .container ul li::after {
+    width: 232px;
+  }
+}
+
+.faq .container ul li .list__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.faq .container ul li .list__info span {
+  display: block;
+  font-family: 'Questrial';
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.22px;
+  color: #70b282;
+  margin-right: 16px;
+}
+
+.faq .container ul li .list__info .question {
+  font-size: 16px;
+  letter-spacing: 0.16px;
+  font-family: 'MicrosoftJhengHei';
+}
+
+.faq .container ul li .ans {
+  display: none;
+  word-break: break-all;
+}
+
+footer {
+  background-color: #e8efee;
+}
+
+footer .container {
+  padding-top: 44px;
+  padding-bottom: 39px;
+  max-width: 1730px;
+  margin: auto;
+}
+
+footer .container .footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content .info {
+    margin: auto;
+  }
+}
+
+footer .container .footer__content .info p {
+  font-size: 14px;
+  color: #484848;
+  padding-bottom: 16px;
+}
+
+@media (max-width: 414px) {
+  footer .container .footer__content .info p {
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content .footer__logo {
+    margin: auto;
+  }
+}
+
+@media (max-width: 414px) {
+  footer .container .footer__content .footer__logo {
+    margin: 0;
+    padding: 15px;
+  }
+}
+
+footer .container .footer__content .footer__logo h1 {
+  font-family: 'Questrial';
+  font-size: 36px;
+  color: #489846;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content .footer__logo h1 {
+    text-align: left;
+  }
+}
+
+footer .container .footer__content .footer__logo .fan__Group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li {
+  position: relative;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li::after {
+  content: '/';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li:last-child::after {
+  display: none;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li a {
+  font-size: 14px;
+  color: #484848;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.copyright {
+  position: relative;
+  background-color: #35564b;
+  height: 48px;
+}
+
+.copyright span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  font-family: 'MicrosoftJhengHei';
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .copyright span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 414px) {
+  .copyright span {
+    white-space: pre-wrap;
+  }
+}
+
+.open {
+  display: block !important;
+  line-height: 1.5;
+  margin: 10px 0 5px 0;
+}
+/*# sourceMappingURL=style.css.map */

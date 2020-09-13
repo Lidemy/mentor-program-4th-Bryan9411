@@ -1,0 +1,271 @@
+// css 載入
+@import "reset";
+@import "grid";
+
+// header 
+
+header{
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+    height: 115px;
+    nav{
+       .container{
+           display: flex;
+           max-width: 1730px;
+           margin: auto;
+           justify-content: space-between;
+           align-items: center;
+           @include pad{
+            flex-direction: column;
+           }
+           .logo{
+               a{
+                   display: block;
+                   text-decoration: none;
+                   font-family: 'Questrial';
+                   font-weight: bold;
+                   font-size: 36px;
+                   color: #489846;
+               }
+           }
+           .top__menu{
+               display: flex;
+               padding: 34px 0;
+               @include pad{
+                   padding: 0;
+                   margin-top: 20px;
+               }
+               li{
+                   margin-right: 60px;
+                   height: 44px;
+                   &:hover{
+                       background-color: #ff7286;
+                       border-radius: 8px;
+                       a{
+                           color: #fefefe;
+                       }
+                   }
+                   @include pad{
+                    margin-right: 0;
+                    height: 50px;
+                   }
+                   a{
+                       padding: 14px 25px 14px 25px;
+                       display: block;
+                       text-decoration: none;
+                       color: #010101;
+                       font-size: 17px;
+                       font-family: "Microsoft JhengHei";
+                       font-weight: bold;
+                       line-height: 22px;
+                   }                
+               }
+           }
+       } 
+    }
+}
+
+// faq
+
+.faq{
+    padding-top: 75px;
+    padding-bottom: 75px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1730px;
+        margin: auto;
+        .title{
+            h2{
+                position: relative;
+                font-size: 36px;
+                font-weight: bold;
+                font-family: 'MicrosoftJhengHei';
+                color: #000000;
+                padding-left: 17px;
+                &::before{
+                    content: '';
+                    width: 15px;
+                    height: 38px;
+                    background-color: #a3dea2;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+        ul{
+            padding-top: 20px;
+            margin: auto;
+            li{
+                position: relative;
+                width: 810px;
+                padding: 31px 10px;
+                transition: height .5s ease;
+                cursor: pointer;
+                @include pad{
+                    width: 450px;
+                }
+                @include mobile480{
+                    width: 400px;
+                }
+                @include mobile414{
+                    width: 300px;
+                }
+                &:hover{
+                    background-color: #f0f0f0f0;
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    right: 2px;
+                    width: 810px;
+                    height: 1px;
+                    background-color: #a6e2c0;
+                    @include pad{
+                        width: 380px;
+                    }
+                    @include mobile480{
+                        width: 335px;
+                    }
+                    @include mobile414{
+                        width: 232px;
+                    }
+                }
+                .list__info{
+                    display: flex;
+                    align-items: center;
+                    span{
+                        display: block;
+                        font-family: 'Questrial';
+                        font-size: 24px;
+                        font-weight: bold;
+                        letter-spacing: 0.22px;
+                        color: #70b282;
+                        margin-right: 16px;
+                    }
+                    .question{
+                        font-size: 16px;
+                        letter-spacing: 0.16px;
+                        font-family: 'MicrosoftJhengHei';
+                    }
+                }
+                .ans{
+                    display: none;
+                    word-break: break-all
+                }
+            }
+        }
+    }
+}
+
+
+// footer
+footer{
+    background-color: #e8efee;
+    .container{
+        padding-top: 44px;
+        padding-bottom: 39px;
+        max-width: 1730px;
+        margin: auto;
+        .footer__content{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            @include pad{
+                flex-direction: column;
+            }
+            .info{
+                @include pad{
+                    margin: auto;
+                }
+                p{
+                    font-size: 14px;
+                    color:#484848;
+                    padding-bottom: 16px;
+                    @include mobile414{
+                        // padding: 15px;
+                        line-height: 1.8;
+                    }
+                }
+            }
+            .footer__logo{
+                @include pad{
+                    margin: auto;
+                }
+                @include mobile414{
+                    margin: 0;
+                    padding: 15px;
+                }
+                h1{
+                    font-family: 'Questrial';
+                    font-size: 36px;
+                    color: #489846;
+                    text-align: right;
+                    @include pad{
+                        text-align: left;
+                    }
+                }
+                .fan__Group{
+                    display: flex;
+                    li{
+                        position: relative;
+                        &::after{
+                            content: '/';
+                            position: absolute;
+                            top:0;
+                            right: 0;
+                        }
+                        &:last-child{
+                            &::after{
+                                display: none;
+                            }
+                        }
+                        a{
+                            font-size: 14px;
+                            color:#484848;
+                            text-decoration: none;
+                            padding-right: 10px;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright{
+    position: relative;
+    background-color: #35564b;
+    height: 48px;
+    span{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        font-family: 'MicrosoftJhengHei';
+        font-size: 16px;
+        color: white;
+        white-space: nowrap;
+        @include pad{
+            font-size:14px ;
+        }
+        @include mobile414{
+            white-space:pre-wrap ;
+        }
+    }
+}
+
+
+.open {
+    display: block !important;
+    line-height: 1.5;
+    margin: 10px 0 5px 0;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新拖延運動表單</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="topbar"></div>
+            <form action="">
+                <h1>新拖延運動表單</h1>
+                <div class="location">
+                    <p>活動日期：2020/12/10 ~ 2020/12/11</p>
+                    <p>活動地點：台北市大安區新生南路二段1號</p>
+                    <div class="necessary">
+                        <span>*必填</span>
+                    </div>
+                </div>
+                <div class="input__block">
+                    <div class="nickname require hide__error">
+                        <h2>暱稱</h2>
+                        <input type="text" name = "nickname" placeholder="您的回答">
+                        <div class="input__error">請輸入暱稱</div>
+                    </div>
+                    <div class="mail require hide__error">
+                        <h2>電子郵件</h2>
+                        <input type="text" name="mail" id="" placeholder="您的電子郵件">
+                        <div class="input__error">請輸入電子郵件</div>
+                    </div>
+                    <div class="phone require hide__error">
+                        <h2>手機號碼</h2>
+                        <input type="text" name = "phone" placeholder="您的手機號碼">
+                        <div class="input__error">請輸入手機號碼</div>
+                    </div>
+                    <div class="apply__type require hide__error">
+                        <h2>報名類型</h2>
+                        <input type="radio" id="r1" name="apply__type">
+                        <label for="r1"> 躺在床上用想像力實作 </label>
+                        <br>
+                        <input type="radio" id="r2" name="apply__type">
+                        <label for="r2"> 趴在地上滑手機找現成的 </label>
+                        <div class="input__error">此欄位不得為空</div>
+                    </div>
+                    <div class="info__source require">
+                        <h2>怎麼知道這個活動的？</h2>
+                        <input type="text" name = "info__source" placeholder="您的回答">
+                    </div>
+                    <div class="other require">
+                        <h2>其他</h2>
+                        <span>對活動的一些建議</span>
+                        <input type="text" name = "other" placeholder="您的回答">
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="submit" class="submit__Btn">提交</button>
+                    <span>請勿透過表單送出您的密碼。</span>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <span> 2020 © Copyright. All rights Reserved.</span>
+    </footer>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+          e.preventDefault()
+          let values = {}
+          let hasError = false
+          const inputSource = document.querySelector('input[name=info__source]').value
+          const elements = document.querySelectorAll('.require')
+          for(element of elements) {
+            const input = element.querySelector('input[type=text]')
+            const radios = element.querySelectorAll('input[type=radio]')
+            let isValid = true
+            if (input) {
+              // 把 value 的值 賦值給 input.name
+              values[input.name] = input.value
+              // 判斷是否有值
+              if(!input.value) {
+                isValid = false
+              }
+            }
+              // 判斷 isValid ，如果是 false 就移除 class
+            if (!isValid) {
+              element.classList.remove('hide__error')
+                hasError = true
+              } else {
+                element.classList.add('hide__error')
+            }
+              // if radio 有資料
+            if (radios.length) {
+              isValid = [...radios].some(radio => radio.checked)
+                if(isValid) {
+                  let radio = element.querySelector("input[type=radio]:checked")
+                  values[radio.name] = radio.value
+                }
+            } else {
+                continue
+              }
+
+              // 判斷 isValid ，如果是 false 就移除 class
+            if (!isValid) {
+              element.classList.remove('hide__error')
+              hasError = true
+            } else {
+                element.classList.add('hide__error')
+              }
+
+            if (!hasError) {
+              alert(
+                 `
+                  暱稱 : ${values.nickname}
+                  電子郵件 : ${values.mail}
+                  手機號碼 : ${values.phone}
+                  報名類型 : ${values.apply__type}
+                  怎麼知道這個活動 : ${inputSource}
+                 `
+              )
+            }
+          }
+        })
+    </script>
+</body>
+</html>

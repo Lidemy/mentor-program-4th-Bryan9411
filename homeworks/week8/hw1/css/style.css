@@ -1,0 +1,439 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  -webkit-box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+          box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  height: 115px;
+}
+
+header nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1730px;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 768px) {
+  header nav .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+header nav .container .logo a {
+  display: block;
+  text-decoration: none;
+  font-family: 'Questrial';
+  font-weight: bold;
+  font-size: 36px;
+  color: #489846;
+}
+
+header nav .container .top__Menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 34px 0;
+}
+
+@media (max-width: 768px) {
+  header nav .container .top__Menu {
+    padding: 0;
+    margin-top: 20px;
+  }
+}
+
+header nav .container .top__Menu li {
+  margin-right: 60px;
+  height: 44px;
+}
+
+header nav .container .top__Menu li:hover {
+  background-color: #ff7286;
+  border-radius: 8px;
+}
+
+header nav .container .top__Menu li:hover a {
+  color: #fefefe;
+}
+
+@media (max-width: 768px) {
+  header nav .container .top__Menu li {
+    margin-right: 0;
+    height: 50px;
+  }
+}
+
+header nav .container .top__Menu li a {
+  padding: 14px 25px 14px 25px;
+  display: block;
+  text-decoration: none;
+  color: #010101;
+  font-size: 18px;
+  font-family: "Microsoft JhengHei";
+  font-weight: bold;
+  line-height: 22px;
+}
+
+section {
+  background-image: url("../img/games-bn.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1730px;
+  margin: auto;
+}
+
+section .container .active {
+  margin: auto;
+  margin-top: 55px;
+  margin-bottom: 150px;
+  padding: 0 20px;
+  width: 550px;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+section .container .active .title {
+  padding: 40px 60px;
+  color: #5ec1b6;
+  font-family: MicrosoftJhengHei;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+section .container .active .active__info .time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #cdcdcd;
+  padding: 24px 0;
+}
+
+section .container .active .active__info .time span {
+  display: block;
+  font-family: MicrosoftJhengHei;
+  font-size: 18px;
+  font-weight: bold;
+  color: #322929;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+section .container .active .active__info .time .time__p {
+  font-size: 16px;
+  width: 187px;
+}
+
+section .container .active .active__info .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 18px 0;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+section .container .active .active__info .description span {
+  display: block;
+  font-family: MicrosoftJhengHei;
+  font-size: 18px;
+  font-weight: bold;
+  color: #322929;
+  padding: 0 20px;
+  white-space: nowrap;
+}
+
+section .container .active .active__info .description .description__p {
+  width: 319px;
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  line-height: 1.63;
+}
+
+section .container .active .active__info .prize {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 25px 0;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+section .container .active .active__info .prize span {
+  font-family: MicrosoftJhengHei;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0 20px;
+}
+
+section .container .active .active__info .prize .prize__p {
+  width: 319px;
+  height: 121px;
+  font-family: MicrosoftJhengHei;
+  font-size: 16px;
+  line-height: 1.63;
+  white-space: wrap;
+}
+
+section .container .active .active__info .btn {
+  background-color: #e62a45;
+  border-radius: 8px;
+  width: 100%;
+  padding: 20px;
+  margin-top: 36px;
+  margin-bottom: 24px;
+}
+
+section .container .active .active__info .btn a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-family: MicrosoftJhengHei;
+  font-size: 20px;
+}
+
+section .container .winning {
+  display: none;
+  margin: auto;
+  margin-top: 190px;
+  margin-bottom: 435px;
+}
+
+section .container .winning .winning__title {
+  font-family: MicrosoftJhengHei;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+}
+
+section .container .winning .again {
+  background-color: #e62a45;
+  border-radius: 8px;
+  width: 440px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 36px;
+  margin-bottom: 24px;
+}
+
+section .container .winning .again a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-family: MicrosoftJhengHei;
+  font-size: 20px;
+}
+
+footer {
+  background-color: #e8efee;
+}
+
+footer .container {
+  padding-top: 44px;
+  padding-bottom: 39px;
+  max-width: 1730px;
+  margin: auto;
+}
+
+footer .container .footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content .info {
+    margin: auto;
+  }
+}
+
+footer .container .footer__content .info p {
+  font-size: 14px;
+  color: #484848;
+  padding-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content .footer__logo {
+    margin: auto;
+  }
+}
+
+footer .container .footer__content .footer__logo h1 {
+  font-family: 'Questrial';
+  font-size: 36px;
+  color: #489846;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  footer .container .footer__content .footer__logo h1 {
+    text-align: left;
+  }
+}
+
+footer .container .footer__content .footer__logo .fan__Group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li {
+  position: relative;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li::after {
+  content: '/';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li:last-child::after {
+  display: none;
+}
+
+footer .container .footer__content .footer__logo .fan__Group li a {
+  font-size: 14px;
+  color: #484848;
+  text-decoration: none;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.copyright {
+  position: relative;
+  background-color: #35564b;
+  height: 48px;
+}
+
+.copyright span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  font-family: 'MicrosoftJhengHei';
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .copyright span {
+    font-size: 14px;
+  }
+}
+
+.first {
+  background-image: url("../img/first.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.second {
+  background-image: url("../img/second.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.third {
+  background-image: url("../img/third.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.none {
+  background: black;
+}
+
+.show {
+  display: block !important;
+}
+/*# sourceMappingURL=style.css.map */

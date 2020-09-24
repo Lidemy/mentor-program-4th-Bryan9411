@@ -1,0 +1,316 @@
+// css 載入
+@import "reset";
+@import "grid";
+
+// header 
+header{
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+    height: 115px;
+    nav{
+       .container{
+           display: flex;
+           max-width: 1730px;
+           margin: auto;
+           justify-content: space-between;
+           align-items: center;
+           @include pad{
+            flex-direction: column;
+           }
+           .logo{
+               a{
+                   display: block;
+                   text-decoration: none;
+                   font-family: 'Questrial';
+                   font-weight: bold;
+                   font-size: 36px;
+                   color: #489846;
+               }
+           }
+           .top__Menu{
+               display: flex;
+               padding: 34px 0;
+               @include pad{
+                   padding: 0;
+                   margin-top: 20px;
+               }
+               li{
+                   margin-right: 60px;
+                   height: 44px;
+                   &:hover{
+                       background-color: #ff7286;
+                       border-radius: 8px;
+                       a{
+                           color: #fefefe;
+                       }
+                   }
+                   @include pad{
+                    margin-right: 0;
+                    height: 50px;
+                   }
+                   a{
+                       padding: 14px 25px 14px 25px;
+                       display: block;
+                       text-decoration: none;
+                       color: #010101;
+                       font-size: 18px;
+                       font-family: "Microsoft JhengHei";
+                       font-weight: bold;
+                       line-height: 22px;
+                   }                
+               }
+           }
+       } 
+    }
+}
+
+// 餐廳抽獎
+section{
+    background-image: url('../img/games-bn.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .container{
+        display: flex;
+        max-width: 1730px;
+        margin: auto;
+        .active{
+            margin:auto;
+            margin-top: 55px;
+            margin-bottom: 150px;
+            padding: 0 20px;
+            width: 550px;
+            height: 100%;
+            border-radius: 16px;
+            background-color: #fff;
+            .title{
+                padding: 40px 60px;
+                color: #5ec1b6;
+                font-family: MicrosoftJhengHei;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .active__info{
+                .time{
+                    display: flex;
+                    border-bottom: 1px solid #cdcdcd;
+                    padding: 24px 0;
+                    span{
+                        display: block;
+                        font-family: MicrosoftJhengHei;
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #322929;
+                        padding: 0 20px;
+                        white-space: nowrap;
+                    }
+                    .time__p{
+                        font-size: 16px;
+                        width: 187px;
+                    }
+                }
+                .description{
+                    display: flex;
+                    padding: 18px 0;
+                    border-bottom: 1px solid #cdcdcd;
+                    span{
+                        display: block;
+                        font-family: MicrosoftJhengHei;
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: #322929;
+                        padding: 0 20px;
+                        white-space: nowrap;
+                    }
+                    .description__p{
+                        width: 319px;
+                        font-family: MicrosoftJhengHei;
+                        font-size: 16px;
+                        line-height: 1.63;
+                    }
+                }
+                .prize{
+                    display: flex;
+                    padding: 25px 0;
+                    border-bottom: 1px solid #cdcdcd;
+                    span{
+                        font-family: MicrosoftJhengHei;
+                        font-size: 18px;
+                        font-weight: bold;
+                        padding: 0 20px;
+                    }
+                    .prize__p{
+                        width: 319px;
+                        height: 121px;
+                        font-family: MicrosoftJhengHei;
+                        font-size: 16px;
+                        line-height: 1.63;
+                        white-space: wrap;
+                        
+                    }
+                }
+                .btn{
+                    background-color: #e62a45;
+                    border-radius: 8px;
+                    width: 100%;
+                    padding: 20px;
+                    margin-top: 36px;
+                    margin-bottom: 24px;
+                    a{
+                        display: block;
+                        color: #fff;
+                        text-decoration: none;
+                        text-align: center;
+                        font-family: MicrosoftJhengHei;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        //抽到獎項的 class
+        .winning{
+            display: none;
+            margin: auto;
+            margin-top: 190px;
+            margin-bottom: 435px;
+            .winning__title{
+                font-family: MicrosoftJhengHei;
+                font-size: 36px;
+                color: #fff;
+                text-align: center;
+            }
+            .again{
+                background-color: #e62a45;
+                border-radius: 8px;
+                width: 440px;
+                padding: 20px;
+                margin:auto;
+                margin-top: 36px;
+                margin-bottom: 24px;
+                a{
+                    display: block;
+                    color: #fff;
+                    text-decoration: none;
+                    text-align: center;
+                    font-family: MicrosoftJhengHei;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+
+
+// footer
+footer{
+    background-color: #e8efee;
+    .container{
+        padding-top: 44px;
+        padding-bottom: 39px;
+        max-width: 1730px;
+        margin: auto;
+        .footer__content{
+            display: flex;
+            justify-content: space-between;
+            @include pad{
+                flex-direction: column;
+            }
+            .info{
+                @include pad{
+                    margin: auto;
+                }
+                p{
+                    font-size: 14px;
+                    color:#484848;
+                    padding-bottom: 16px;
+                }
+            }
+            .footer__logo{
+                @include pad{
+                    margin: auto;
+                }
+                h1{
+                    font-family: 'Questrial';
+                    font-size: 36px;
+                    color: #489846;
+                    text-align: right;
+                    @include pad{
+                        text-align: left;
+                    }
+                }
+                .fan__Group{
+                    display: flex;
+                    li{
+                        position: relative;
+                        &::after{
+                            content: '/';
+                            position: absolute;
+                            top:0;
+                            right: 0;
+                        }
+                        &:last-child{
+                            &::after{
+                                display: none;
+                            }
+                        }
+                        a{
+                            font-size: 14px;
+                            color:#484848;
+                            text-decoration: none;
+                            padding-right: 10px;
+                            padding-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.copyright{
+    position: relative;
+    background-color: #35564b;
+    height: 48px;
+    span{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        font-family: 'MicrosoftJhengHei';
+        font-size: 16px;
+        color: white;
+        white-space: nowrap;
+        @include pad{
+            font-size:14px ;
+        }
+    }
+}
+
+
+
+.first{
+    background-image: url('../img/first.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.second{
+    background-image: url('../img/second.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.third{
+    background-image: url('../img/third.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.none{
+    background:black;
+}
+.show {
+    display: block !important;
+}
+

@@ -175,7 +175,7 @@ header {
 
 .board .board__data .card .card__info .card__content {
   width: 400px;
-  word-break: break-all;
+  word-break: break-word;
   white-space: pre-line;
   margin-top: 20px;
 }

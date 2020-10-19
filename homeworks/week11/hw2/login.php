@@ -23,7 +23,7 @@
   <nav class="navbar">
     <div class="wrapper navbar__wrapper">
       <div class="navbar__site-name">
-        <a href='index.html'>Who's Blog</a>
+        <a href='index.php'>Who's Blog</a>
       </div>
       <ul class="navbar__list">
         <div>

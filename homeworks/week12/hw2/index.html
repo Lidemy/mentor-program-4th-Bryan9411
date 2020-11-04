@@ -50,14 +50,14 @@
       }
       
       // 按下 enter 新增 todo
-      $('input[name=todo]').keydown(e => {
+      $('input[name=todo]').keydown((e) => {
         if(e.key === 'Enter') {
           addTodo()
         }
       })
 
       // 清空已完成 todo
-      $('.clear__all').click(e => {
+      $('.clear__all').click((e) => {
         $('.bg_opacity').each(function(i, el){
           if($(e.target).parent().parent().parent().find('.checkbox').is(':checked')) {
             todoCounts--

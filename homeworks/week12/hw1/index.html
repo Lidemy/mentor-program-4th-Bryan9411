@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <title>Document</title>
+  <style>
+    .comments {
+      margin: 10px 0;
+    }
+    .comment-mt{
+      margin: 10px 0;
+    }
+  </style>
+  <script>  
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;")
+    }
+
+    // 找到所有留言 api
+    function getCommentsApi(site_key, before, cb) {
+      let url = `http://mentor-program.co/mtr04group4/bryan9411/week12/hw1/api_comments.php?site_key=${site_key}`
+      if (before) {
+        url += '&before=' + before
+      }
+      $.ajax({
+        url,
+      }).done(function(data) {
+        cb(data)
+      })
+    }
+    function appendCommentToDom(container, comment, isPrepend) {
+      const html = `
+        <div class="card comment-mt">
+          <div class="card-body">
+            <h5 class="card-title">${escapeHtml(comment.nickname)}</h5>
+            <p class="card-text">${escapeHtml(comment.content)}</p>
+          </div>
+        </div>
+      `
+      if (isPrepend) {
+        container.prepend(html)
+      } else {
+        container.append(html)
+      }
+    }
+    const site_key = 'Bryan'
+    const loadBtnHtml = `
+      <button class="btn btn-primary load__more">載入更多</button>
+    `
+    let beforeId = null
+    let isEnd = false
+    
+
+    $(document).ready(() => {
+      getComments()
+      
+      $('.comments').on('click', '.load__more', (e) => {
+        e.preventDefault()
+        getComments()
+      })
+
+      $('.add__comment-form').submit((e) => {
+        e.preventDefault()
+        const commentData = {
+          site_key: 'Bryan',
+          nickname: $('input[name=nickname]').val(),
+          content: $('textarea[name=content]').val()
+        }
+
+        $.ajax({
+          type: 'POST',
+          url: 'http://mentor-program.co/mtr04group4/bryan9411/week12/hw1/api_add_comments.php',
+          data: commentData
+        }).done((data) => {
+          if(!data.success) {
+            alert(data.message)
+            return
+          }
+          $('input[name=nickname]').val('')
+          $('textarea[name=content]').val('')
+          appendCommentToDom($('.comments'), commentData, true)
+        })
+      })
+    })
+    
+    function getComments() {
+      const commentDom = $('.comments')
+      $('.load__more').hide()
+      if (isEnd) return
+      getCommentsApi(site_key, beforeId, data => {
+        if (!data.success) {
+          alert(data.message)
+          return
+        }
+        const comments = data.discussions
+        for (let comment of comments) {
+          appendCommentToDom(commentDom, comment)
+        }
+        let length = comments.length
+        if (length === 0) {
+          isEnd = true
+          $('.load__more').hide()
+        } else {
+          beforeId = comments[length - 1].id
+          $('.comments').append(loadBtnHtml)
+        }
+      })
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <form class="add__comment-form">
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="form__nickname">暱稱</label>
+        <input type="text" name="nickname" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="content__textarea">留言內容</label>
+        <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">送出</button>
+      <div class="comments">
+        
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

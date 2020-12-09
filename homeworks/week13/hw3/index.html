@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>twitch</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>
+          <a href="">Twitch Top Games</a>
+        </h1>
+      </div>
+      <nav>
+        <ul class="nav__list"></ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="title">
+        <h1 class="game__name">Game's name</h1>
+        <span>Top 20 popular live streams sorted by current viewers</span>
+      </div>
+      <div class="stream__box"></div>
+    </div>
+  </main>
+  <script>
+    const url = 'https://api.twitch.tv/kraken'
+    const ClientID = '7i8imjlwj0oqyiu3rutgfayf17op3w';
+    const Accept = 'application/vnd.twitchtv.v5+json'
+    const steamTemplate = `
+    <div class="stream__list">
+      <a href="$url">
+        <img src="$preview" alt="">
+      </a>
+      <div class="stream__data">
+        <div class="stream__avatar">
+          <img src="$logo" alt="">
+        </div>
+        <div class="stream__info">
+          <div class="stream__title">$title</div>
+          <div class="stream__channel">$name</div>
+        </div>
+      </div>
+    </div>
+    `
+
+    // 拿到遊戲資料
+    function getGames() {
+      return fetch(`${url}/games/top?limit=5`, {
+        method: 'GET',
+        headers: new Headers({
+          'Accept': Accept,
+          'Client-ID': ClientID,
+        }),
+      }).then(response => {
+        return response.json()
+      }).then(json => {
+        return json
+      }).catch(error => {
+        console.log('error', error)
+      })
+    }
+    
+
+    // 拿到實況資料
+    function getSteams(game) {
+      return fetch(`${url}/streams?game=${game}&limit=20`, {
+        method: 'GET',
+        headers: new Headers({
+          'Accept': Accept,
+          'Client-ID': ClientID,
+        }),
+      }).then(response => {
+        return response.json()
+      }).then(json => {
+        console.log(json)
+        return json
+      }).catch(error => {
+        console.log('error', error)
+      })
+    }
+
+    // 動態載入頻道資訊
+    function appendStreams(streams) {
+      streams.forEach(stream => {
+        const content = steamTemplate
+          .replace('$url', stream.channel.url)
+          .replace('$preview', stream.preview.large)
+          .replace('$logo', stream.channel.logo)
+          .replace('$title', stream.channel.status)
+          .replace('$name', stream.channel.name);
+        $('.stream__box').append(content)
+      })
+    }
+
+    // 拿到前五個遊戲名稱
+    getGames().then(games => {
+      const topGames = games.top.map(game => game.game.name)
+      // console.log(topGame)
+      for(const game of topGames) {
+        const nav = $('.nav__list')
+        nav.append(
+          `
+            <li>${game}<li>
+          `
+        )
+      }
+
+      // 取得第一個實況資訊
+      getSteams(topGames[0]).then(data => {
+        appendStreams(data.streams)
+      })
+    })
+
+    // 點擊選單切換實況頻道
+    $('.nav__list').on('click', 'li', function(e) {
+      e.preventDefault()
+      if (e.target.tagName.toLowerCase() === 'li') {
+        // 找到 li 的值，再把它覆蓋過去
+        const gameText = $(e.target).text()
+        $('.game__name').text(gameText)
+        
+        // 清空實況資訊
+        $('.stream__box').html('')
+
+        // 重新抓取 getStream的回傳值
+        getSteams(gameText).then(data => {
+          appendStreams(data.streams)
+        })
+      }
+    })
+    
+  </script>
+</body>
+
+</html>

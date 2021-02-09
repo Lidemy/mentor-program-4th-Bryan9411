@@ -106,7 +106,7 @@ const handleButtonClick = useCallback(() => {
 
 - class component ：關注在進入每個 lifecycle 要做什麼事
 
-- function component ：關注當 function 重新 render 後要做什麼事情，或當 function render 完後每個 state 改變後要做什麼事情。
+- function component ：關注當 function 重新 render 後要做什麼事情，或當 function render 完後每個 state 改變時要做什麼事情。
 
 ## uncontrolled 跟 controlled component 差在哪邊？要用的時候通常都是如何使用？
 

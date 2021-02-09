@@ -55,6 +55,37 @@ const MemoButton = memo(Button);
 
 主要在防止 "component" 重新 re-render。只有當 a or b 的值有更動時，才會 re-render。
 
+### useContext：
+
+如果專案規模比較大的話，可能會出現需要把 `props`值一層一層往上傳遞情況，這樣在大規模專案裡就會顯得比較麻煩，而 `useContext` 可以讓底層的所有元素都包含這個 `props`值。
+
+```js
+
+// 建立一個 Context
+const ColorContext = creatContext(初始值);
+
+//使用 ColorContext
+function App () {
+  return (
+    <ColorContext.Provider value={color}>
+      <Content>
+    </ColorContext.Provider>
+  )
+}
+```
+
+```js
+// Content.js
+export default function Content() {
+  const [color] = useState(ColorContext); // 把 context 的值給拿出來
+  return (
+    <ColorContext.Provider>
+      <div>colorName: {color}</div>
+    </ColorContext.Provider>
+  );
+}
+```
+
 ### useCallback：
 
 ```js

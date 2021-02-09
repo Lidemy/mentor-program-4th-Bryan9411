@@ -1,3 +1,7 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable arrow-parens */
+/* eslint-disable quotes */
 /* eslint-disable consistent-return */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
@@ -6,12 +10,12 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
-import styled from 'styled-components';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import avatar from '../../IMG/avatar.png';
-import { getPostFromPage } from '../../webApi';
+import styled from "styled-components";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import avatar from "../../IMG/avatar.png";
+import { getPostFromPage } from "../../webApi";
 
 const Container = styled.div`
   display: flex;
@@ -152,7 +156,7 @@ export default function ArchivePage() {
 
   // 目前在第幾頁 , 預設第一頁
   const [currentPage, setCurrentPage] = useState(1);
-  const limit = 3;
+  const limit = 5;
 
   const handleChangePageNext = (e) => {
     e.preventDefault();
@@ -170,14 +174,14 @@ export default function ArchivePage() {
       .then((res) => {
         console.log(res);
         // 從 response header 找到文章總數
-        if (res.headers.get('X-Total-Count')) {
+        if (res.headers.get("X-Total-Count")) {
           // 找到文章總數
-          const totalArticals = Number(res.headers.get('X-Total-Count'));
+          const totalArticals = Number(res.headers.get("X-Total-Count"));
           console.log(totalArticals);
 
           // 找到全部有幾頁 (文章總數 / limit)
           let totalPages = Math.ceil(totalArticals / limit);
-          console.log('totalPages', totalPages);
+          console.log("totalPages", totalPages);
           if (!totalPages) {
             totalPages = 1;
           }
@@ -191,12 +195,16 @@ export default function ArchivePage() {
       });
   }, []);
 
-  useEffect(() => getPostFromPage(currentPage, limit)
-    .then(res => res.json())
-    .then((posts) => {
-      console.log(posts);
-      setPosts(posts);
-    }), [currentPage]);
+  useEffect(
+    () =>
+      getPostFromPage(currentPage, limit)
+        .then((res) => res.json())
+        .then((posts) => {
+          console.log(posts);
+          setPosts(posts);
+        }),
+    [currentPage]
+  );
 
   return (
     <Container>
@@ -209,7 +217,7 @@ export default function ArchivePage() {
       </Information>
       <PostList>
         <h1>文章列表</h1>
-        {posts.map(post => (
+        {posts.map((post) => (
           <Post post={post} key={post.id} />
         ))}
         <ButtonWrapper>
